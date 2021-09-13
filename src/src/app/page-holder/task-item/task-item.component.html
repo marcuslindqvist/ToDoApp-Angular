@@ -1,0 +1,13 @@
+<div *ngIf="task" [ngClass]="isDone ? 'completedTask' : 'unDoneTask'">
+  <p>{{ task }}</p>
+  <label class="checkbox-label">
+    <input
+      type="checkbox"
+      name="isDone"
+      id="markAsDone"
+      [(ngModel)]="isDone"
+      (click)="updateItem()"
+    />
+    <span class="checkbox-custom"></span>
+  </label>
+</div>

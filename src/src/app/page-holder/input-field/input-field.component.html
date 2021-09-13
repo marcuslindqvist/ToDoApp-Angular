@@ -1,0 +1,12 @@
+<div>
+  <div class="alert {{ alertClass }}">Forgot to type something?</div>
+  <input
+    type="text"
+    id="task"
+    placeholder="Write something"
+    [(ngModel)]="newTask"
+    (keydown.enter)="addNewTask(newTask)"
+  />
+  <label for="task"></label>
+  <button (click)="addNewTask(newTask)">ADD</button>
+</div>

@@ -1,0 +1,24 @@
+<main>
+  <h2>remember</h2>
+  <app-input-field (addNewTaskItem)="createTask($event)"></app-input-field>
+  <!-- Display unfinished tasks -->
+  <div *ngFor="let item of taskItemList.reverse()">
+    <app-task-item
+      *ngIf="!item.isDone"
+      (updateItemEvent)="updateItemList($event)"
+      [task]="item.task"
+      [isDone]="item.isDone"
+      [id]="item.id"
+    ></app-task-item>
+  </div>
+  <!-- Display finished tasks -->
+  <div *ngFor="let item of taskItemList.reverse()">
+    <app-task-item
+      *ngIf="item.isDone"
+      (updateItemEvent)="updateItemList($event)"
+      [task]="item.task"
+      [isDone]="item.isDone"
+      [id]="item.id"
+    ></app-task-item>
+  </div>
+</main>

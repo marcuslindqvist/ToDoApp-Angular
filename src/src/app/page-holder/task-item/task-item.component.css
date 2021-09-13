@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
+  height: 3rem;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 1rem auto 0px auto;
+  border-radius: 2px;
+  transition: all 0.1s linear;
+  font-family: "Roboto", sans-serif;
+}
+.completedTask {
+  text-decoration: line-through;
+  color: grey;
+}
+div:hover {
+  transform: scale(1.01);
+}
+.closingBtn {
+  margin-right: 2rem;
+}
+
+.checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox-label .checkbox-custom {
+  position: absolute;
+  top: 1rem;
+  right: 0.8rem;
+  height: 18px;
+  width: 18px;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid rgb(228, 141, 141);
+
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+}
+.checkbox-label .checkbox-custom::after {
+  position: absolute;
+  content: "";
+  right: 12px;
+  top: 12px;
+  height: 0px;
+  width: 0px;
+  border-radius: 5px;
+  border: solid rgb(228, 141, 141);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(0deg) scale(0);
+  -ms-transform: rotate(0deg) scale(0);
+  transform: rotate(0deg) scale(0);
+  opacity: 1;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+}
+.checkbox-label input:checked ~ .checkbox-custom {
+  background-color: rgb(228, 141, 141);
+  border-radius: 5px;
+  -webkit-transform: rotate(0deg) scale(1);
+  -ms-transform: rotate(0deg) scale(1);
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+  border: 2px solid rgb(228, 141, 141);
+}
+
+.checkbox-label input:checked ~ .checkbox-custom::after {
+  -webkit-transform: rotate(45deg) scale(1);
+  -ms-transform: rotate(45deg) scale(1);
+  transform: rotate(45deg) scale(1);
+  opacity: 1;
+  right: 6px;
+  top: 2px;
+  width: 4.5px;
+  height: 9px;
+  border: solid rgb(255, 255, 255);
+  border-width: 0 2px 2px 0;
+  background-color: transparent;
+  border-radius: 0;
+}
